@@ -19,8 +19,13 @@ public class FetchStudent extends HttpServlet {
 			resp.getWriter().print("<h1>Address : " + s.getSAddress() + "</h1>");
 			resp.getWriter().print("<h1>Percentage : " + s.getSPercentage() + "</h1>");
 			resp.getWriter().print("<h1>Gender : " + s.getSGender() + "</h1>");
-			resp.getWriter()
-					.print("<a href=\"http://localhost:8080/hibernate_basics/home.html\"><button>Home</button></a>");
+			//resp.getWriter().print("<a href=\"home.html\"><button>Home</button></a>");
 		}
+		else {
+			resp.getWriter().print("<h1>No Data Found</h1>");
+//			resp.getWriter().print("<a href=\"home.html\"><button>Home</button></a>");
+		}
+		
+		req.getRequestDispatcher("home.html").include(req, resp);
 	}
 }

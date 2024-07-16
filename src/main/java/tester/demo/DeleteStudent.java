@@ -15,6 +15,7 @@ public class DeleteStudent extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HibernateLogics.deleteStudent(Integer.parseInt(req.getParameter("id")));
 		resp.getWriter().print("<h1>Student Deleted</h1>");
-		resp.getWriter().print("<a href=\"http://localhost:8080/hibernate_basics/home.html\"><button>Home</button></a>");
+//		resp.getWriter().print("<a href=\"http://localhost:8080/hibernate_basics/home.html\"><button>Home</button></a>");
+		req.getRequestDispatcher("home.html").include(req, resp);
 	}
 }
