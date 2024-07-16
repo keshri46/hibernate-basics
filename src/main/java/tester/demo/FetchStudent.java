@@ -14,9 +14,13 @@ public class FetchStudent extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Student s = HibernateLogics.fetchStudent(Integer.parseInt(req.getParameter("id")));
-		resp.getWriter().print("<h1>Name : "+s.getSName()+"</h1>");
-		resp.getWriter().print("<h1>Address : "+s.getSAddress()+"</h1>");
-		resp.getWriter().print("<h1>Percentage : "+s.getSPercentage()+"</h1>");
-		resp.getWriter().print("<h1>Gender : "+s.getSGender()+"</h1>");
+		if (s != null) {
+			resp.getWriter().print("<h1>Name : " + s.getSName() + "</h1>");
+			resp.getWriter().print("<h1>Address : " + s.getSAddress() + "</h1>");
+			resp.getWriter().print("<h1>Percentage : " + s.getSPercentage() + "</h1>");
+			resp.getWriter().print("<h1>Gender : " + s.getSGender() + "</h1>");
+			resp.getWriter()
+					.print("<a href=\"http://localhost:8080/hibernate_basics/home.html\"><button>Home</button></a>");
+		}
 	}
 }

@@ -16,6 +16,8 @@ public class AddStudent extends HttpServlet {
 		Student s = new Student(req.getParameter("name"), req.getParameter("address"),
 				Double.parseDouble(req.getParameter("percentage")), req.getParameter("gender"));
 		HibernateLogics.addStudent(s);
-		resp.getWriter().print("<h1>Student Added</h1");
+		//resp.setContentType("text/html");
+		resp.getWriter().println("<h1>Student Added</h1>");
+		resp.getWriter().println("<a href=\"http://localhost:8080/hibernate_basics/home.html\"><button>Home</button></a>");
 	}
 }
