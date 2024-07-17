@@ -9,3 +9,8 @@
 	border: 1px solid black;
 	border-collapse: collapse;
 }
+
+.btn {
+	height: 40px;
+	width: 70px;
+}

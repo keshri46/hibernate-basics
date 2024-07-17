@@ -6,7 +6,8 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<form action="add">
+	<form action="add" method="post"
+		enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>Enter Name:</td>
@@ -26,12 +27,16 @@
 				<td><input type="radio" value="female" name="gender">Female</td>
 			</tr>
 			<tr>
+				<td>Choose File:</td>
+				<td><input type="file" name="file"></td>
+			</tr>
+			<tr>
 				<td><button>Add</button></td>
 				<td><button>Cancel</button></td>
 			</tr>
 		</table>
 	</form>
 	<br>
-	<a href="home.html"><button>Home</button></a>
+	<a href="home.html"><button class="btn">Home</button></a>
 </body>
 </html>
